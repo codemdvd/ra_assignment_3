@@ -7,7 +7,7 @@ def hash_value(word: str) -> float:
     h = xxhash.xxh64(word, seed=seed).intdigest()
     return h / float(2**64)
 
-def recordinality_estimate(filename: str, k: int = 1024) -> float:
+def recordinality_estimate(filename: str, k: int = 4000) -> float:
     heap = []
     seen = set()
     with open(filename, 'r', encoding='utf-8') as f:
@@ -48,15 +48,15 @@ def true_cardinality(filename: str):
     return len(word_counts), word_counts
 
 if __name__ == "__main__":
-    crusoe_text_file = "synthetic_datasets/synthetic_data_3.txt"
-    crusoe_data_file = "synthetic_datasets/synthetic_data_3.dat"
+    crusoe_text_file = "datasets/war-peace.txt"
+    crusoe_data_file = "datasets/war-peace.dat"
 
     true_card, word_counts = true_cardinality(crusoe_data_file)
 
     trials = 5
     estimates = []
     for _ in range(trials):
-        est_card = recordinality_estimate(crusoe_text_file, k=1024)
+        est_card = recordinality_estimate(crusoe_text_file, k=4000)
         estimates.append(est_card)
 
     avg_est = sum(estimates) / trials

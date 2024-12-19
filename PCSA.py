@@ -57,7 +57,7 @@ if __name__ == "__main__":
 
     true_card, word_counts = true_cardinality(crusoe_data_file)
 
-    m = 1024
+    m = 3000
     pcsa = PCSA(m)
 
     with open(crusoe_text_file, 'r', encoding='utf-8') as f:

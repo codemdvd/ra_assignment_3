@@ -52,8 +52,8 @@ def true_cardinality(filename: str):
     return len(word_counts), word_counts
 
 if __name__ == "__main__":
-    crusoe_text_file = "synthetic_datasets/synthetic_data_2.txt"
-    crusoe_data_file = "synthetic_datasets/synthetic_data_2.dat"
+    crusoe_text_file = "synthetic_datasets/synthetic_data_3.txt"
+    crusoe_data_file = "synthetic_datasets/synthetic_data_3.dat"
 
     true_card, word_counts = true_cardinality(crusoe_data_file)
 

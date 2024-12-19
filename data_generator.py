@@ -43,9 +43,9 @@ def binary_search_cumulative(cumulative_probs, u):
     return low
 
 if __name__ == "__main__":
-    n = 999
-    N = 88888
-    alpha = 0.7
+    n = 999999
+    N = 45323
+    alpha = 0.9
     output_file = "synthetic_datasets/synthetic_data_3.txt"
     
     generate_zipfian_data(n, N, alpha, output_file)
